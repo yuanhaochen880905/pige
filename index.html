@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh">
   <head>
     <meta charset="UTF-8" />
@@ -17,8 +17,14 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica,
-          Arial, sans-serif;
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
       }
 
       body {
@@ -116,10 +122,13 @@
         background: white;
         border-radius: 28px;
         overflow: hidden; /* 保证图片圆角 */
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.03),
+        box-shadow:
+          0 8px 18px rgba(0, 0, 0, 0.03),
           0 2px 4px rgba(0, 0, 0, 0.05);
         border: 1px solid #e2e8f0;
-        transition: transform 0.2s ease, box-shadow 0.3s ease;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.3s ease;
         cursor: pointer;
         display: flex;
         flex-direction: column;
@@ -182,14 +191,77 @@
         font-style: italic;
       }
 
-      /* ----- 底部联系信息 (地址、电话、邮箱) ----- */
-      footer {
-        background: #0b2b42;
-        color: #eef4ff;
-        margin-top: 3rem;
-        padding: 2rem 2rem 1.5rem;
-        border-radius: 40px 40px 0 0;
+      /* ----- 微信二维码区域 ----- */
+      .qr-section {
+        background: white;
+        border-radius: 28px;
+        padding: 2rem 1.5rem;
+        margin: 2rem 0 3rem;
+        box-shadow:
+          0 8px 18px rgba(0, 0, 0, 0.03),
+          0 2px 4px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
       }
+
+      .qr-grid {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .qr-item {
+        text-align: center;
+        flex: 1 1 150px;
+        max-width: 200px;
+      }
+
+      .qr-img-container {
+        background: #f8fafc;
+        border-radius: 20px;
+        padding: 1rem;
+        margin-bottom: 0.8rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: transform 0.2s ease;
+      }
+
+      .qr-img-container:hover {
+        transform: translateY(-4px);
+      }
+
+      .qr-img-container img {
+        width: 100%;
+        height: auto;
+        max-width: 150px;
+        border-radius: 12px;
+        display: block;
+      }
+
+      .qr-desc {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #0b2b42;
+        margin: 0;
+      }
+
+      /* 手机端优化 */
+      @media (max-width: 600px) {
+        .qr-grid {
+          flex-direction: column;
+          align-items: center;
+          gap: 1.5rem;
+        }
+        .qr-item {
+          flex: none;
+          width: 100%;
+          max-width: 250px;
+        }
+        .qr-section {
+          padding: 1.5rem 1rem;
+          margin: 1.5rem 0 2rem;
+        }
+      }
+
       .footer-content {
         max-width: 1200px;
         margin: 0 auto;
@@ -367,7 +439,7 @@
       <!-- 顶端公司介绍区 (中英文) -->
       <header class="company-header">
         <h1>
-          广州优玛 · Umart
+          广州优玛商贸 · Umart
           <small>est. 2009</small>
         </h1>
         <p>
@@ -402,8 +474,43 @@
       >
         <p>
           <i class="fas fa-globe" style="margin-right: 8px"></i>
-          
         </p>
+      </div>
+
+      <!-- 微信二维码区域 -->
+      <div class="section-title">
+        微信二维码 <span class="en-light">WeChat QR Codes</span>
+      </div>
+      <div class="qr-section">
+        <div class="qr-grid">
+          <div class="qr-item">
+            <div class="qr-img-container">
+              <img
+                src="https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407200128_188_12.png"
+                alt="微信二维码1"
+              />
+            </div>
+            <p class="qr-desc"></p>
+          </div>
+          <div class="qr-item">
+            <div class="qr-img-container">
+              <img
+                src="https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407201112_190_12.png"
+                alt="微信二维码2"
+              />
+            </div>
+            <p class="qr-desc">Mandy</p>
+          </div>
+          <div class="qr-item">
+            <div class="qr-img-container">
+              <img
+                src="https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260319140538_55_9.jpg"
+                alt="微信二维码3"
+              />
+            </div>
+            <p class="qr-desc">Haochen</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -413,23 +520,21 @@
         <div class="contact-item">
           <i class="fas fa-map-marker-alt"></i>
           <span
-            >中国 · 广州市南沙区环盛街2号保利思泰2107室<br />Room 2107, Baoli
-            Sikai, No. 2 Huansheng Street, Nansha District, Guangzhou City,
-            China
+            >中国 · 广州市南沙区环盛街2号2107室<br />Room 2107, No. 2 Huansheng
+            Street, Nansha District, Guangzhou City, China
           </span>
         </div>
         <div class="contact-item">
           <i class="fas fa-phone-alt"></i>
-          <span>客服热线 +86 20 8133 5099   /   +86 13318713373</span>
+          <span>客服热线 +86 20 8133 5099 / +86 13318713373</span>
+          <span>+86 13360559947</span>
+          <span>+86 1912832265</span>
         </div>
         <div class="contact-item">
-          <i class="fas fa-envelope"></i>
           <a href="mailto:contact@smarthub.com">2533083366@qq.com</a>
         </div>
       </div>
-      <div class="copyright">
-        © 2025 广州优玛商贸 | 工作时间 10:00-18:00
-      </div>
+      <div class="copyright">© 2025 广州优玛商贸 | 工作时间 10:00-18:00</div>
     </footer>
 
     <!-- 模态框 (产品详情：两张图 + 中英文介绍) -->
@@ -734,7 +839,7 @@
             detailImg2:
               "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407184758_177_12.jpg",
           },
-           {
+          {
             id: 21,
             cnName: "空气层麂皮绒",
             enName: "",
