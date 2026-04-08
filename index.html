@@ -50,8 +50,15 @@
         padding: 2rem 1.5rem;
         border-radius: 0 0 36px 36px;
         margin-bottom: 2.5rem;
-        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         box-shadow: 0 8px 20px rgba(0, 20, 40, 0.2);
+      }
+
+      .header-content {
+        text-align: center;
+        flex: 1;
       }
 
       .company-header h1 {
@@ -80,11 +87,19 @@
         margin-top: 1rem;
         font-size: 0.95rem;
       }
-      .slogan span {
+      .qr-code {
         background: rgba(255, 255, 255, 0.12);
-        padding: 0.3rem 1.2rem;
-        border-radius: 40px;
+        padding: 0.5rem;
+        border-radius: 20px;
         backdrop-filter: blur(4px);
+      }
+
+      .qr-code img {
+        width: 100%;
+        height: auto;
+        max-width: 80px;
+        border-radius: 12px;
+        display: block;
       }
 
       /* ----- 产品区域标题 ----- */
@@ -438,18 +453,24 @@
     <div class="wrapper">
       <!-- 顶端公司介绍区 (中英文) -->
       <header class="company-header">
-        <h1>
-          广州优玛商贸 · Umart
-          <small>est. 2009</small>
-        </h1>
-        <p>
-          让匠心触手可及,用皮革连接世界。<br />
-          Craftsmanship accessible, leather connects the world.
-        </p>
-        <div class="slogan">
-          <span>📜 匠心皮料 · Crafted Leather</span>
-          <span>🎩 质感匠艺 · Texture Master</span>
-          <span>🌿 经久耐用 · Durable & Timeless</span>
+        <div class="header-content">
+          <h1>
+            广州优玛 · Umart
+            <small>est. 2009</small>
+          </h1>
+          <div class="slogan">
+            <span>📜 匠心皮料 · Crafted Leather</span>
+            <span>🎩 质感匠艺 · Texture Master</span>
+            <span>🌿 经久耐用 · Durable & Timeless</span>
+          </div>
+          <p>如有需要可以联系销售:+86 13318713373 Mandy</p>
+          <p>Please contact our sales team if needed:+86 13318713373 Mandy</p>
+        </div>
+        <div class="qr-code">
+          <img
+            src="https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407201112_190_12.png"
+            alt="二维码"
+          />
         </div>
       </header>
 
@@ -490,7 +511,7 @@
                 alt="微信二维码1"
               />
             </div>
-            <p class="qr-desc"></p>
+            <p class="qr-desc">Henry</p>
           </div>
           <div class="qr-item">
             <div class="qr-img-container">
@@ -528,7 +549,7 @@
           <i class="fas fa-phone-alt"></i>
           <span>客服热线+86 13318713373</span>
           <span>+86 13360559947</span>
-          <span>+86 19128322465</span>
+          <span>+86 1912832265</span>
         </div>
         <div class="contact-item">
           <a href="mailto:contact@smarthub.com">2533083366@qq.com</a>
