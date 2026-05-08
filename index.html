@@ -1,1370 +1,1074 @@
 <!doctype html>
 <html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
-    />
-    <title>优玛商贸</title>
-    <!-- Font Awesome 图标库 (用于联系方式) -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family:
-          system-ui,
-          -apple-system,
-          "Segoe UI",
-          Roboto,
-          Helvetica,
-          Arial,
-          sans-serif;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <title>优玛商贸</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
 
-      body {
-        background-color: #f8fafc;
-        color: #1e2b3c;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
+    /* 主色调定义：布鲁斯蓝 + 慕斯粉 */
+    :root {
+      --blue-primary: #0b2b42; /* 布鲁斯蓝（主） */
+      --blue-light: #9fb5d0;    /* 布鲁斯蓝（浅） */
+      --pink-primary: #f8c8dc;  /* 慕斯粉（主） */
+      --pink-light: #fef0f5;    /* 慕斯粉（浅） */
+      --gray-light: #f8fafc;    /* 背景浅灰 */
+      --text-dark: #1e2b3c;     /* 深色文字 */
+      --text-gray: #4e6279;     /* 灰色文字 */
+    }
 
-      .wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        width: 100%;
-        flex: 1;
-      }
+    body {
+      background-color: var(--gray-light);
+      color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-      /* ----- 顶部公司介绍 (中英双语) ----- */
-      .company-header {
-        background: #0b2b42;
-        color: white;
-        padding: 2rem 1.5rem;
-        border-radius: 0 0 36px 36px;
-        margin-bottom: 2.5rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0 8px 20px rgba(0, 20, 40, 0.2);
-      }
+    .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+      flex: 1;
+    }
 
-      .header-content {
-        text-align: center;
-        flex: 1;
-      }
+    /* ----- 顶部公司介绍 (中英双语) ----- */
+    .company-header {
+      background: linear-gradient(135deg, var(--blue-primary), #14456b);
+      color: white;
+      padding: 2rem 1.5rem;
+      border-radius: 0 0 36px 36px;
+      margin-bottom: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 8px 20px rgba(0, 20, 40, 0.2);
+    }
 
-      .company-header h1 {
-        font-size: 2.2rem;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-      }
-      .company-header h1 small {
-        font-size: 1.1rem;
-        font-weight: 300;
-        margin-left: 10px;
-        opacity: 0.9;
-      }
-      .company-header p {
-        font-size: 1.1rem;
-        max-width: 750px;
-        margin: 0.8rem auto 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        padding-top: 1rem;
-      }
-      .slogan {
-        display: flex;
-        justify-content: center;
-        gap: 1.2rem;
-        flex-wrap: wrap;
-        margin-top: 1rem;
-        font-size: 0.95rem;
-      }
-      .qr-code {
-        background: rgba(255, 255, 255, 0.12);
-        padding: 0.5rem;
-        border-radius: 20px;
-        backdrop-filter: blur(4px);
-      }
+    .header-content {
+      text-align: center;
+      flex: 1;
+    }
 
-      .qr-code img {
-        width: 100%;
-        height: auto;
-        max-width: 80px;
-        border-radius: 12px;
-        display: block;
-      }
+    .company-header h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .company-header h1 small {
+      font-size: 1.1rem;
+      font-weight: 300;
+      margin-left: 10px;
+      opacity: 0.9;
+    }
+    .company-header p {
+      font-size: 1.1rem;
+      max-width: 750px;
+      margin: 0.8rem auto 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 1rem;
+    }
+    .slogan {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+    .qr-code {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 0.5rem;
+      border-radius: 20px;
+      backdrop-filter: blur(4px);
+    }
 
-      /* ----- 产品区域标题 ----- */
-      .section-title {
-        font-size: 1.9rem;
-        font-weight: 500;
-        margin: 1.5rem 0 2rem;
-        padding-left: 0.8rem;
-        border-left: 6px solid #0b2b42;
-      }
-      .section-title .en-light {
-        font-size: 1.2rem;
-        font-weight: 300;
-        color: #4e6279;
-        margin-left: 15px;
-      }
+    .qr-code img {
+      width: 100%;
+      height: auto;
+      max-width: 80px;
+      border-radius: 12px;
+      display: block;
+    }
 
-      /* ----- 产品网格 (一行两个，自适应) ----- */
+    /* ----- 分类筛选栏 ----- */
+    .category-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 1.5rem 0 2rem;
+      padding: 1rem;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .category-btn {
+      padding: 8px 20px;
+      border: none;
+      border-radius: 50px;
+      background: var(--gray-light);
+      color: var(--blue-primary);
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 2px solid transparent;
+    }
+
+    .category-btn.active {
+      background: var(--blue-primary);
+      color: white;
+    }
+
+    .category-btn:hover {
+      background: var(--pink-light);
+      border-color: var(--pink-primary);
+      color: var(--blue-primary);
+    }
+
+    /* ----- 产品区域标题 ----- */
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 500;
+      margin: 1.5rem 0 2rem;
+      padding-left: 0.8rem;
+      border-left: 6px solid var(--blue-primary);
+      color: var(--blue-primary);
+    }
+    .section-title .en-light {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--text-gray);
+      margin-left: 15px;
+    }
+
+    /* ----- 产品网格 (响应式：手机2列，电脑3列) ----- */
+    .product-grid {
+      display: grid;
+      /* 电脑端3列，最小宽度280px自适应 */
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+      margin: 2rem 0 3rem;
+    }
+
+    /* 手机端强制2列 (小于768px) */
+    @media (max-width: 768px) {
       .product-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 默认两列 */
-        gap: 25px;
-        margin: 2rem 0 3rem;
+        grid-template-columns: repeat(2, 1fr);
       }
+    }
 
-      /* 手机屏幕下变为一列 */
-      @media (max-width: 600px) {
-        .product-grid {
-          grid-template-columns: 1fr;
-        }
+    /* 超小手机端 (小于480px) 1列（兜底） */
+    @media (max-width: 480px) {
+      .product-grid {
+        grid-template-columns: 1fr;
       }
+    }
 
-      /* 产品卡片 */
-      .product-card {
-        background: white;
-        border-radius: 28px;
-        overflow: hidden; /* 保证图片圆角 */
-        box-shadow:
-          0 8px 18px rgba(0, 0, 0, 0.03),
-          0 2px 4px rgba(0, 0, 0, 0.05);
-        border: 1px solid #e2e8f0;
-        transition:
-          transform 0.2s ease,
-          box-shadow 0.3s ease;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-      }
+    /* 产品卡片 */
+    .product-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden; /* 保证图片圆角 */
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
 
-      /* 悬停轻微浮动效果 (点击时也有同样效果，但这里用hover满足) */
-      .product-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 20px 28px -8px rgba(0, 35, 70, 0.2);
-        border-color: #9fb5d0;
-      }
+    /* 悬停轻微浮动效果 */
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 28px -8px rgba(11, 43, 66, 0.15);
+      border-color: var(--pink-primary);
+    }
 
-      /* 图片区域：自适应盒子，固定比例 */
-      .product-img {
-        width: 100%;
-        aspect-ratio: 1 / 1; /* 正方形图片，也可改成4/3，但要求自适应盒子 */
-        background-color: #e9eef3;
-        overflow: hidden;
-      }
-      .product-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* 保证图片覆盖区域不变形 */
-        display: block;
-        transition: transform 0.4s ease;
-      }
-      .product-card:hover .product-img img {
-        transform: scale(1.02);
-      }
+    /* 图片区域：自适应盒子，固定比例 */
+    .product-img {
+      width: 100%;
+      aspect-ratio: 1 / 1; /* 正方形图片 */
+      background-color: var(--pink-light);
+      overflow: hidden;
+    }
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* 保证图片覆盖区域不变形 */
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .product-card:hover .product-img img {
+      transform: scale(1.02);
+    }
 
-      /* 卡片文字区域 (中英文) */
-      .product-info {
-        padding: 1.2rem 1rem 1.5rem;
-        text-align: center;
-      }
-      .cn-name {
-        font-size: 1.6rem;
-        font-weight: 650;
-        color: #0b2b42;
-        margin-bottom: 0.2rem;
-      }
-      .en-name {
-        font-size: 1rem;
-        font-weight: 400;
-        color: #3f5569;
-        margin-bottom: 0.7rem;
-        letter-spacing: 0.3px;
-        border-bottom: 1px dashed #cfddee;
-        padding-bottom: 0.6rem;
-      }
-      .cn-desc {
-        font-size: 1rem;
-        font-weight: 500;
-        color: #1e2e44;
-        margin-bottom: 0.2rem;
-      }
-      .en-desc {
-        font-size: 0.88rem;
-        color: #5d7186;
-        font-style: italic;
-      }
+    /* 卡片文字区域 (中英文) */
+    .product-info {
+      padding: 1.2rem 1rem 1.5rem;
+      text-align: center;
+    }
+    .cn-name {
+      font-size: 1.6rem;
+      font-weight: 650;
+      color: var(--blue-primary);
+      margin-bottom: 0.2rem;
+    }
+    .en-name {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-gray);
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.3px;
+      border-bottom: 1px dashed var(--pink-light);
+      padding-bottom: 0.6rem;
+    }
+    .cn-desc {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-bottom: 0.2rem;
+    }
+    .en-desc {
+      font-size: 0.88rem;
+      color: var(--text-gray);
+      font-style: italic;
+    }
 
-      /* ----- 微信二维码区域 ----- */
-      .qr-section {
-        background: white;
-        border-radius: 28px;
-        padding: 2rem 1.5rem;
-        margin: 2rem 0 3rem;
-        box-shadow:
-          0 8px 18px rgba(0, 0, 0, 0.03),
-          0 2px 4px rgba(0, 0, 0, 0.05);
-        border: 1px solid #e2e8f0;
-      }
+    /* ----- 微信二维码区域 ----- */
+    .qr-section {
+      background: white;
+      border-radius: 28px;
+      padding: 2rem 1.5rem;
+      margin: 2rem 0 3rem;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+      background: linear-gradient(180deg, white, var(--pink-light));
+    }
 
+    .qr-grid {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .qr-item {
+      text-align: center;
+      flex: 1 1 150px;
+      max-width: 200px;
+    }
+
+    .qr-img-container {
+      background: white;
+      border-radius: 20px;
+      padding: 1rem;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease;
+      border: 2px solid var(--pink-light);
+    }
+
+    .qr-img-container:hover {
+      transform: translateY(-4px);
+      border-color: var(--pink-primary);
+    }
+
+    .qr-img-container img {
+      width: 100%;
+      height: auto;
+      max-width: 150px;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .qr-desc {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--blue-primary);
+      margin: 0;
+    }
+
+    /* 手机端二维码优化 */
+    @media (max-width: 600px) {
       .qr-grid {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
       }
-
       .qr-item {
-        text-align: center;
-        flex: 1 1 150px;
-        max-width: 200px;
-      }
-
-      .qr-img-container {
-        background: #f8fafc;
-        border-radius: 20px;
-        padding: 1rem;
-        margin-bottom: 0.8rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        transition: transform 0.2s ease;
-      }
-
-      .qr-img-container:hover {
-        transform: translateY(-4px);
-      }
-
-      .qr-img-container img {
+        flex: none;
         width: 100%;
-        height: auto;
-        max-width: 150px;
-        border-radius: 12px;
-        display: block;
+        max-width: 250px;
       }
+      .qr-section {
+        padding: 1.5rem 1rem;
+        margin: 1.5rem 0 2rem;
+      }
+    }
 
-      .qr-desc {
-        font-size: 1rem;
-        font-weight: 500;
-        color: #0b2b42;
-        margin: 0;
-      }
+    /* 底部样式 */
+    footer {
+      background: var(--blue-primary);
+      color: white;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+    }
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.8rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .contact-item i {
+      width: 26px;
+      font-size: 1.3rem;
+      color: var(--pink-primary);
+      margin-top: 2px;
+    }
+    .contact-item a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+    }
+    .contact-item a:hover {
+      border-bottom: 1px solid var(--pink-primary);
+      color: var(--pink-light);
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      opacity: 0.7;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 1.5rem;
+    }
 
-      /* 手机端优化 */
-      @media (max-width: 600px) {
-        .qr-grid {
-          flex-direction: column;
-          align-items: center;
-          gap: 1.5rem;
-        }
-        .qr-item {
-          flex: none;
-          width: 100%;
-          max-width: 250px;
-        }
-        .qr-section {
-          padding: 1.5rem 1rem;
-          margin: 1.5rem 0 2rem;
-        }
-      }
+    /* ----- 模态框 (详情: 两张图 + 详细介绍) ----- */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(6px);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 16px;
+    }
 
-      .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 1.8rem;
-      }
-      .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-size: 1rem;
-      }
-      .contact-item i {
-        width: 26px;
-        font-size: 1.3rem;
-        color: #9bbde2;
-      }
-      .contact-item a {
-        color: white;
-        text-decoration: none;
-        border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
-      }
-      .contact-item a:hover {
-        border-bottom: 1px solid white;
-      }
-      .copyright {
-        text-align: center;
-        margin-top: 2rem;
-        font-size: 0.85rem;
-        opacity: 0.7;
-        border-top: 1px solid rgba(255, 255, 255, 0.15);
-        padding-top: 1.5rem;
-      }
+    .modal-content {
+      background: white;
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      border-radius: 40px;
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.5);
+      overflow-y: auto;
+      position: relative;
+      animation: modalPop 0.25s;
+      border: 3px solid var(--pink-light);
+    }
 
-      /* ----- 模态框 (详情: 两张图 + 详细介绍) ----- */
-      .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.75);
-        backdrop-filter: blur(6px);
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
-        padding: 16px;
+    @keyframes modalPop {
+      from {
+        opacity: 0.6;
+        transform: scale(0.96);
       }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
-      .modal-content {
-        background: white;
-        max-width: 900px;
-        width: 100%;
-        max-height: 90vh;
-        border-radius: 40px;
-        box-shadow: 0 30px 50px rgba(0, 0, 0, 0.5);
-        overflow-y: auto;
-        position: relative;
-        animation: modalPop 0.25s;
-      }
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: var(--blue-primary);
+      cursor: pointer;
+      background: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+      z-index: 10;
+      line-height: 1;
+      border: 2px solid var(--pink-light);
+    }
+    .close-btn:hover {
+      background: var(--blue-primary);
+      color: white;
+      border-color: var(--blue-primary);
+    }
 
-      @keyframes modalPop {
-        from {
-          opacity: 0.6;
-          transform: scale(0.96);
-        }
-        to {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
+    .modal-body {
+      padding: 32px 28px 38px;
+    }
 
-      .close-btn {
-        position: absolute;
-        top: 20px;
-        right: 25px;
-        font-size: 2.8rem;
-        font-weight: 300;
-        color: #2c3e4f;
-        cursor: pointer;
-        background: rgba(255, 255, 255, 0.85);
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.2s;
-        z-index: 10;
-        line-height: 1;
-      }
-      .close-btn:hover {
-        background: #0b2b42;
-        color: white;
-      }
+    /* 模态框中英文标题 */
+    .modal-title-cn {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--blue-primary);
+      padding-right: 40px;
+    }
+    .modal-title-en {
+      font-size: 1.3rem;
+      color: var(--text-gray);
+      font-weight: 400;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--pink-light);
+      padding-bottom: 15px;
+    }
 
-      .modal-body {
-        padding: 32px 28px 38px;
-      }
+    /* 两张详情图容器 (并排，自适应) */
+    .detail-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 20px 0 25px;
+    }
+    .detail-img-box {
+      flex: 1 1 200px; /* 最小200px，自动换行 */
+      background: var(--pink-light);
+      border-radius: 28px;
+      overflow: hidden;
+      aspect-ratio: 1 / 1; /* 正方形 */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    }
+    .detail-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-      /* 模态框中英文标题 */
+    /* 模态框详细描述 */
+    .modal-description {
+      background: var(--pink-light);
+      padding: 1.8rem;
+      border-radius: 28px;
+      margin: 10px 0 5px;
+    }
+    .modal-desc-cn {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--blue-primary);
+    }
+    .modal-desc-en {
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--text-gray);
+    }
+
+    /* 手机端模态框优化 */
+    @media (max-width: 480px) {
       .modal-title-cn {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #0b2b42;
-        padding-right: 40px;
+        font-size: 2rem;
       }
-      .modal-title-en {
-        font-size: 1.3rem;
-        color: #3b5d81;
-        font-weight: 400;
-        margin-top: 5px;
-        margin-bottom: 20px;
-        border-bottom: 2px solid #e5ecf5;
-        padding-bottom: 15px;
+      .modal-body {
+        padding: 24px 18px;
       }
-
-      /* 两张详情图容器 (并排，自适应) */
-      .detail-images {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin: 20px 0 25px;
-      }
-      .detail-img-box {
-        flex: 1 1 200px; /* 最小200px，自动换行，两张图并排 */
-        background: #f0f4fa;
-        border-radius: 28px;
-        overflow: hidden;
-        aspect-ratio: 1 / 1; /* 正方形，自适应 */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
-      }
-      .detail-img-box img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-
-      /* 模态框详细描述 */
-      .modal-description {
-        background: #ecf3fb;
-        padding: 1.8rem;
-        border-radius: 28px;
-        margin: 10px 0 5px;
-      }
-      .modal-desc-cn {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        color: #0b2b42;
-      }
-      .modal-desc-en {
-        font-size: 1rem;
-        font-style: italic;
-        color: #2f4b6e;
-      }
-
-      /* 手机优化 */
-      @media (max-width: 480px) {
-        .modal-title-cn {
-          font-size: 2rem;
-        }
-        .modal-body {
-          padding: 24px 18px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="wrapper">
-      <!-- 顶端公司介绍区 (中英文) -->
-      <header class="company-header">
-        <div class="header-content">
-          <h1>
-            广州优玛 · Umart
-            <small>est. 2009</small>
-          </h1>
-          <div class="slogan">
-            <span>📜 匠心皮料 · Crafted Leather</span>
-            <span>🎩 质感匠艺 · Texture Master</span>
-            <span>🌿 经久耐用 · Durable & Timeless</span>
-          </div>
-          <p>如有需要可以联系销售:+86 19320546394 Mandy</p>
-          <p>Please contact our sales team if needed:+86 19320546394 Mandy</p>
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- 顶端公司介绍区 -->
+    <header class="company-header">
+      <div class="header-content">
+        <h1>
+          广州优玛 · Umart
+          <small>est. 2009</small>
+        </h1>
+        <div class="slogan">
+          <span>📜 匠心皮料 · Crafted Leather</span>
+          <span>🎩 质感匠艺 · Texture Master</span>
+          <span>🌿 经久耐用 · Durable & Timeless</span>
         </div>
-        <div class="qr-code">
-          <img
-            src="https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/65.jpg"
-            alt="二维码"
-          />
+        <p>如有需要可以联系销售:+86 19320546394 Mandy</p>
+        <p>Please contact our sales team if needed:+86 19320546394 Mandy</p>
+      </div>
+      <div class="qr-code">
+        <img src="https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/65.jpg" alt="二维码" />
+      </div>
+    </header>
+
+    <!-- 产品区域标题 -->
+    <div class="section-title">
+      热门产品 <span class="en-light">Hot Products</span>
+    </div>
+
+    <!-- 分类筛选栏 -->
+    <div class="category-filter" id="categoryFilter">
+      <button class="category-btn active" data-category="all">全部产品</button>
+      <button class="category-btn" data-category="豹纹系列">豹纹系列</button>
+      <button class="category-btn" data-category="绒布系列">绒布系列</button>
+      <button class="category-btn" data-category="皮料系列">皮料系列</button>
+      <button class="category-btn" data-category="其他系列">其他系列</button>
+    </div>
+
+    <!-- 产品网格 (动态生成) -->
+    <div class="product-grid" id="productGrid"></div>
+
+    <!-- 装饰分隔 -->
+    <div style="background: var(--pink-light); border-radius: 60px; padding: 1.5rem; margin: 2rem 0; text-align: center; color: var(--blue-primary);">
+      <p><i class="fas fa-globe" style="margin-right: 8px"></i> 品质选材 · 全球供应</p>
+    </div>
+
+    <!-- 微信二维码区域 -->
+    <div class="section-title">
+      微信二维码 <span class="en-light">WeChat QR Codes</span>
+    </div>
+    <div class="qr-section">
+      <div class="qr-grid">
+        <div class="qr-item">
+          <div class="qr-img-container">
+            <img src="https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407200128_188_12.png" alt="微信二维码1" />
+          </div>
+          <p class="qr-desc">Henry</p>
         </div>
-      </header>
-
-      <!-- 产品展示区标题 -->
-      <div class="section-title">
-        热门产品 <span class="en-light">Hot Products</span>
-      </div>
-
-      <!-- 产品网格 (一行两个卡片) 由JS动态生成 -->
-      <div class="product-grid" id="productGrid"></div>
-
-      <!-- 一点点装饰，不影响功能 -->
-      <div
-        style="
-          background: #deeaf5;
-          border-radius: 60px;
-          padding: 1.5rem;
-          margin: 2rem 0;
-          text-align: center;
-          color: #123b5e;
-        "
-      >
-        <p>
-          <i class="fas fa-globe" style="margin-right: 8px"></i>
-        </p>
-      </div>
-
-      <!-- 微信二维码区域 -->
-      <div class="section-title">
-        微信二维码 <span class="en-light">WeChat QR Codes</span>
-      </div>
-      <div class="qr-section">
-        <div class="qr-grid">
-          <div class="qr-item">
-            <div class="qr-img-container">
-              <img
-                src="https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407200128_188_12.png"
-                alt="微信二维码1"
-              />
-            </div>
-            <p class="qr-desc">Henry</p>
+        <div class="qr-item">
+          <div class="qr-img-container">
+            <img src="https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407201112_190_12.png" alt="微信二维码2" />
           </div>
-          <div class="qr-item">
-            <div class="qr-img-container">
-              <img
-                src="https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407201112_190_12.png"
-                alt="微信二维码2"
-              />
-            </div>
-            <p class="qr-desc">Mandy</p>
+          <p class="qr-desc">Mandy</p>
+        </div>
+        <div class="qr-item">
+          <div class="qr-img-container">
+            <img src="https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/65.jpg" alt="微信二维码3" />
           </div>
-          <div class="qr-item">
-            <div class="qr-img-container">
-              <img
-                src="https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/65.jpg"
-                alt="微信二维码3"
-              />
-            </div>
-            <p class="qr-desc">Haochen</p>
-          </div>
+          <p class="qr-desc">Haochen</p>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- 底部：地址、电话、邮箱 (完全满足) -->
-    <footer>
-      <div class="footer-content">
-        <div class="contact-item">
-          <i class="fas fa-map-marker-alt"></i>
-          <span
-            >中国 · 广州市南沙区环盛街2号2107室<br />Room 2107, No. 2 Huansheng
-            Street, Nansha District, Guangzhou City, China
-          </span>
-        </div>
-        <div class="contact-item">
-          <i class="fas fa-phone-alt"></i>
-          <span>客服热线+86 19320546394</span>
-          <span>+86 13360559947</span>
+  <!-- 底部信息 -->
+  <footer>
+    <div class="footer-content">
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>中国 · 广州市南沙区环盛街2号2107室<br />Room 2107, No. 2 Huansheng Street, Nansha District, Guangzhou City, China</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-phone-alt"></i>
+        <div>
+          <span>客服热线+86 19320546394</span><br/>
+          <span>+86 13360559947</span><br/>
           <span>+86 1912832265</span>
         </div>
-        <div class="contact-item">
-          <a href="mailto:contact@smarthub.com">2533083366@qq.com</a>
-        </div>
       </div>
-      <div class="copyright">© 2025 广州优玛商贸 | 工作时间 10:00-18:00</div>
-    </footer>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:2533083366@qq.com">2533083366@qq.com</a>
+      </div>
+    </div>
+    <div class="copyright">© 2025 广州优玛商贸 | 工作时间 10:00-18:00</div>
+  </footer>
 
-    <!-- 模态框 (产品详情：两张图 + 中英文介绍) -->
-    <div class="modal" id="productModal">
-      <div class="modal-content">
-        <span class="close-btn" id="closeModalBtn">&times;</span>
-        <div class="modal-body" id="modalBody">
-          <!-- 动态填充内容 -->
-          <div class="modal-title-cn" id="modalCnName">智能手表</div>
-          <div class="modal-title-en" id="modalEnName">Smart Watch X1</div>
-          <!-- 两张详情图容器 -->
-          <div class="detail-images">
-            <div class="detail-img-box">
-              <img
-                id="detailImg1"
-                src="https://picsum.photos/id/101/500/500"
-                alt="detail 1"
-              />
-            </div>
-            <div class="detail-img-box">
-              <img
-                id="detailImg2"
-                src="https://picsum.photos/id/102/500/500"
-                alt="detail 2"
-              />
-            </div>
+  <!-- 模态框 (产品详情) -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModalBtn">&times;</span>
+      <div class="modal-body" id="modalBody">
+        <div class="modal-title-cn" id="modalCnName">智能手表</div>
+        <div class="modal-title-en" id="modalEnName">Smart Watch X1</div>
+        <div class="detail-images">
+          <div class="detail-img-box">
+            <img id="detailImg1" src="https://picsum.photos/id/101/500/500" alt="detail 1" />
           </div>
-          <!-- 中英文详细介绍 -->
-          <div class="modal-description">
-            <div class="modal-desc-cn" id="modalCnDesc">
-              1.8英寸AMOLED屏幕，心率血氧监测，10天续航
-            </div>
-            <div class="modal-desc-en" id="modalEnDesc">
-              1.8" AMOLED display, HR & SpO2 tracking, 10-day battery
-            </div>
+          <div class="detail-img-box">
+            <img id="detailImg2" src="https://picsum.photos/id/102/500/500" alt="detail 2" />
           </div>
+        </div>
+        <div class="modal-description">
+          <div class="modal-desc-cn" id="modalCnDesc">1.8英寸AMOLED屏幕，心率血氧监测，10天续航</div>
+          <div class="modal-desc-en" id="modalEnDesc">1.8" AMOLED display, HR & SpO2 tracking, 10-day battery</div>
         </div>
       </div>
     </div>
+  </div>
 
-    <script>
-      (function () {
-        // ---------- 产品数据 (包含主图 + 两张详情图 + 中英文) ----------
-        const products = [
-          {
-            id: 1,
-            cnName: "lx429",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/70bc5fd46a9d71d20baa911991cf7c54.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/80801e614ba1d8e674fc5564ff215b70.png",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/af9f34e2b7f53f9d217f0653b8030876.jpg",
-          },
+  <script>
+    (function () {
+      // ---------- 产品数据 (新增category分类字段，保持原有信息不变) ----------
+      const products = [
         {
-            id: 2,
-            cnName: "PS-F-17",
-            enName: "",
-            cnDesc: "布宽:150cm-152cm",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/4070d47cfb4a3398753734974736080f.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/5d80e23ee7ca781f088f690de3be76d1.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/bbf4a06c71d3445b226df53f53fd5b06.jpg",
-          },
-          {
-            id: 3,
-            cnName: "430-2豹纹",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/9c04e7c3402697fda3345c2069f80635.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/edcc0b7cf845413d4b97512376e62f37.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/c2058945cf541481eaf276c64c930221.jpg",
-          },
-          {
-            id: 4,
-            cnName: "430-1豹纹",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/7f24b4e4ac27031d66fcc67d7cc111e3.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/84bc7a950580ec6d5871960870ccb330.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/f89c1ddbf28b1da34fa04d656dfcbfde.jpg",
-          },
-          {
-            id: 5,
-            cnName: "430-3豹纹",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/e42ee983f8ee44490e27e034f9001bfb.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/7af01f0497cbc13873c31245e29621f2.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/cab1e31c28cf83a3a2f478b16be91153.jpg",
-          },
-          {
-            id: 6,
-            cnName: "430-4豹纹",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/c4c72fce52cf0ca3cd6b011fc4b16d03.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/08d7c27f65c7d8746ab6bc300265c044.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/e200012baf1a0b4e01589a5452918f13.jpg",
-          },
-          {
-            id: 7,
-            cnName: "AEF44",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407170501_120_12.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407170511_121_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407170511_122_12.jpg",
-          },
-          {
-            id: 8,
-            cnName: "HL-闪网",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407170815_123_12.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407170823_124_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407170823_125_12.jpg",
-          },
-          {
-            id: 9,
-            cnName: "HL-斑马",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407170909_126_12.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407170910_127_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407170910_128_12.jpg",
-          },
-          {
-            id: 10,
-            cnName: "HL-花网",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407171215_129_12.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407171216_130_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407171216_131_12.jpg",
-          },
-          {
-            id: 11,
-            cnName: "AEF2488",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407172001_132_12.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407172012_133_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407172013_134_12.jpg",
-          },
-          {
-            id: 12,
-            cnName: "AEF2542",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407173755_136_12.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407173759_137_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407173820_139_12.jpg",
-          },
-          {
-            id: 13,
-            cnName: "AEF41",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407174105_141_12.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407174106_143_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407174117_144_12.jpg",
-          },
-          {
-            id: 14,
-            cnName: "AEF2633",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407174601_146_12.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407174602_147_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407174602_148_12.jpg",
-          },
-          {
-            id: 15,
-            cnName: "AEF2630",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407175703_149_12.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407175704_150_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407175705_151_12.jpg",
-          },
-          {
-            id: 16,
-            cnName: "D549",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/12.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407181115_154_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407181116_155_12.jpg",
-          },
-          {
-            id: 17,
-            cnName: "北平疯马",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407182025_160_12.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407182040_162_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407182134_163_12.jpg",
-          },
-          {
-            id: 18,
-            cnName: "D548",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407182442_164_12.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407182451_165_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407182452_166_12.jpg",
-          },
-          {
-            id: 19,
-            cnName: "磨砂绒",
-            enName: "",
-            cnDesc: "幅宽:160cm,成份:100%涤纶,克重:120-220g",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407183407_169_12.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407183946_172_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407184038_173_12.jpg",
-          },
-          {
-            id: 20,
-            cnName: "鹿纤绒",
-            enName: "",
-            cnDesc: "幅宽:150cm,克重:120-220g,成份:100%涤纶",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407184655_175_12.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407184738_176_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407184758_177_12.jpg",
-          },
-          {
-            id: 21,
-            cnName: "空气层麂皮绒",
-            enName: "",
-            cnDesc: "幅宽:160CM,成份:92%涤纶+8%氨纶,克重:120-220g",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407185714_179_12.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407185842_180_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407185842_181_12.jpg",
-          },
-          {
-            id: 22,
-            cnName: "空气层麂皮绒",
-            enName: "",
-            cnDesc: "幅宽:150CM-160CM,成份:94%涤纶+6%氨纶,克重:120-220g",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407190243_183_12.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407190446_184_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407190447_185_12.jpg",
-          },
-          {
-            id: 23,
-            cnName: "D1032",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/13.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/14.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/15.jpg",
-          },
-          {
-            id: 24,
-            cnName: "AEF宝格丽",
-            enName: "",
-            cnDesc: "0.75±0.05MM",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/16.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/17.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/18.jpg",
-          },
-          {
-            id: 25,
-            cnName: "A22045",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/19.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/20.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/21.jpg",
-          },
-          {
-            id: 26,
-            cnName: "HY3714",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/22.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/23.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/24.jpg",
-          },
-          {
-            id: 27,
-            cnName: "TNNZ",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/25.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/26.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/27.jpg",
-          },
-          {
-            id: 28,
-            cnName: "水晶绒SJ",
-            enName: "",
-            cnDesc: "需要更多颜色色卡请加我们联系",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260409152218_247_12.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260409152215_244_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/28.jpg",
-          },
-          {
-            id: 29,
-            cnName: "天鹅绒SJ",
-            enName: "",
-            cnDesc: "180-210g",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/31.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/30.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/29.jpg",
-          },
-          {
-            id: 30,
-            cnName: "超细天鹅绒SJ",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260409195708_205_9.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/32.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/33.jpg",
-          },
-          {
-            id: 31,
-            cnName: "氨纶超柔绒布",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/37.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/36.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/35.jpg",
-          },
-          {
-            id: 32,
-            cnName: "DF5260",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/38.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/39.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/40.jpg",
-          },
-          {
-            id: 33,
-            cnName: "DF5182",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/41.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/42.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/43.jpg",
-          },
-          {
-            id: 34,
-            cnName: "AEF2602-15#",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/44.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/45.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/46.jpg",
-          },
-          {
-            id: 35,
-            cnName: "生态牛纤绒",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/47.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/48.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/49.jpg",
-          },
-          {
-            id: 36,
-            cnName: "GX牛飞绒",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/50.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/51.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/52.jpg",
-          },
-          {
-            id: 37,
-            cnName: "双面绒超纤",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/53.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/54.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/55.jpg",
-          },
-          {
-            id: 38,
-            cnName: "MQ蕾丝网-19",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/56.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/57.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/58.jpg",
-          },
-          {
-            id: 39,
-            cnName: "CD9066",
-            enName: "",
-            cnDesc: "门幅180",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/59.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/60.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/61.jpg",
-          },
-          {
-            id: 40,
-            cnName: "ZD2104A",
-            enName: "",
-            cnDesc: "免洗水牛仔,幅宽150cm",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/62.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/63.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/64.jpg",
-          },
-          {
-            id: 41,
-            cnName: "2K965",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/66.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/67.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/68.jpg",
-          },
-          {
-            id: 42,
-            cnName: "2Y51",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/69.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/70.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/71.jpg",
-          },
-          {
-            id: 43,
-            cnName: "25189",
-            enName: "",
-            cnDesc: "",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/72.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/73.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/74.jpg",
-          },
-          {
-            id: 44,
-            cnName: "圆点",
-            enName: "",
-            cnDesc: "面料可任意切换",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/75.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/76.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/77.jpg",
-          },
-          {
-            id: 45,
-            cnName: "羊皮绒",
-            enName: "",
-            cnDesc: "克重240g",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/IMG_20260423_0063.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/c4aabcd57c6a9e3194c6dcf58fb34490.png",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/422-1%E7%BE%8A%E7%BB%92(1).png",
-          },
-          {
-            id: 46,
-            cnName: "PD-PS-J-37",
-            enName: "",
-            cnDesc: "布宽:145cm左右,成份:100%聚酯纤维",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E6%9C%AA%E5%91%BD%E5%90%8D.jpg", // 卡片主图
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260406161701_67_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260406161657_66_12.jpg",
-          },
-          {
-            id: 47,
-            cnName: "PD-PS-B-17",
-            enName: "",
-            cnDesc: "布宽:150cm,成份:10%氨纶90%聚酯纤维",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407161649_95_12_%E5%89%AF%E6%9C%AC.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407161649_94_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407161649_95_12.jpg",
-          },
-          {
-            id: 48,
-            cnName: "仿羊津",
-            enName: "",
-            cnDesc: "克重:350g,门幅:145cm",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/1.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407161719_96_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407161719_97_12_%E5%89%AF%E6%9C%AC.jpg",
-          },
-          {
-            id: 49,
-            cnName: "PD-PS-J-36",
-            enName: "",
-            cnDesc: "布宽:145cm左右,成份100%聚酯纤维",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407162912_108_12_%E5%89%AF%E6%9C%AC.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407162912_109_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407162911_106_12.jpg",
-          },
-          {
-            id: 50,
-            cnName: "34大石头纹",
-            enName: "",
-            cnDesc: "功能:耐磨",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407162912_109_12_%E5%89%AF%E6%9C%AC.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407162744_99_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407162746_100_12.jpg",
-          },
-          {
-            id: 51,
-            cnName: "AEF24104",
-            enName: "",
-            cnDesc: " PU55%人棉45%",
-            enDesc: "",
-            mainImg:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407165335_116_12.jpg",
-            detailImg1:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407165345_117_12.jpg",
-            detailImg2:
-              "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407165401_119_12.jpg",
-          },
-        ];
+          id: 1,
+          category: "其他系列",
+          cnName: "lx429",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/70bc5fd46a9d71d20baa911991cf7c54.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/80801e614ba1d8e674fc5564ff215b70.png",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/af9f34e2b7f53f9d217f0653b8030876.jpg",
+        },
+        {
+          id: 2,
+          category: "其他系列",
+          cnName: "PS-F-17",
+          enName: "",
+          cnDesc: "布宽:150cm-152cm",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/4070d47cfb4a3398753734974736080f.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/5d80e23ee7ca781f088f690de3be76d1.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/bbf4a06c71d3445b226df53f53fd5b06.jpg",
+        },
+        {
+          id: 3,
+          category: "豹纹系列",
+          cnName: "430-2豹纹",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/9c04e7c3402697fda3345c2069f80635.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/edcc0b7cf845413d4b97512376e62f37.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/c2058945cf541481eaf276c64c930221.jpg",
+        },
+        {
+          id: 4,
+          category: "豹纹系列",
+          cnName: "430-1豹纹",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/7f24b4e4ac27031d66fcc67d7cc111e3.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/84bc7a950580ec6d5871960870ccb330.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/f89c1ddbf28b1da34fa04d656dfcbfde.jpg",
+        },
+        {
+          id: 5,
+          category: "豹纹系列",
+          cnName: "430-3豹纹",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/e42ee983f8ee44490e27e034f9001bfb.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/7af01f0497cbc13873c31245e29621f2.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/cab1e31c28cf83a3a2f478b16be91153.jpg",
+        },
+        {
+          id: 6,
+          category: "豹纹系列",
+          cnName: "430-4豹纹",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/c4c72fce52cf0ca3cd6b011fc4b16d03.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/08d7c27f65c7d8746ab6bc300265c044.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/e200012baf1a0b4e01589a5452918f13.jpg",
+        },
+        {
+          id: 7,
+          category: "其他系列",
+          cnName: "AEF44",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407170501_120_12.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407170511_121_12.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407170511_122_12.jpg",
+        },
+        {
+          id: 8,
+          category: "其他系列",
+          cnName: "HL-闪网",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407170815_123_12.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407170823_124_12.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407170823_125_12.jpg",
+        },
+        {
+          id: 9,
+          category: "其他系列",
+          cnName: "HL-斑马",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407170909_126_12.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407170910_127_12.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407170910_128_12.jpg",
+        },
+        {
+          id: 10,
+          category: "其他系列",
+          cnName: "HL-花网",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407171215_129_12.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407171216_130_12.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407171216_131_12.jpg",
+        },
+        {
+          id: 11,
+          category: "其他系列",
+          cnName: "AEF2488",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407172001_132_12.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407172012_133_12.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407172013_134_12.jpg",
+        },
+        {
+          id: 12,
+          category: "其他系列",
+          cnName: "AEF2542",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407173755_136_12.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407173759_137_12.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407173820_139_12.jpg",
+        },
+        {
+          id: 13,
+          category: "其他系列",
+          cnName: "AEF41",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407174105_141_12.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407174106_143_12.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407174117_144_12.jpg",
+        },
+        {
+          id: 14,
+          category: "其他系列",
+          cnName: "AEF2633",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407174601_146_12.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407174602_147_12.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407174602_148_12.jpg",
+        },
+        {
+          id: 15,
+          category: "其他系列",
+          cnName: "AEF2630",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407175703_149_12.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407175704_150_12.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407175705_151_12.jpg",
+        },
+        {
+          id: 16,
+          category: "皮料系列",
+          cnName: "D549",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/12.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407181115_154_12.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407181116_155_12.jpg",
+        },
+        {
+          id: 17,
+          category: "皮料系列",
+          cnName: "北平疯马",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407182025_160_12.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407182040_162_12.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407182134_163_12.jpg",
+        },
+        {
+          id: 18,
+          category: "皮料系列",
+          cnName: "D548",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407182442_164_12.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407182451_165_12.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407182452_166_12.jpg",
+        },
+        {
+          id: 19,
+          category: "绒布系列",
+          cnName: "磨砂绒",
+          enName: "",
+          cnDesc: "幅宽:160cm,成份:100%涤纶,克重:120-220g",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407183407_169_12.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407183946_172_12.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407184038_173_12.jpg",
+        },
+        {
+          id: 20,
+          category: "绒布系列",
+          cnName: "鹿纤绒",
+          enName: "",
+          cnDesc: "幅宽:150cm,克重:120-220g,成份:100%涤纶",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407184655_175_12.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407184738_176_12.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407184758_177_12.jpg",
+        },
+        {
+          id: 21,
+          category: "绒布系列",
+          cnName: "空气层麂皮绒",
+          enName: "",
+          cnDesc: "幅宽:160CM,成份:92%涤纶+8%氨纶,克重:120-220g",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407185714_179_12.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407185842_180_12.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407185842_181_12.jpg",
+        },
+        {
+          id: 22,
+          category: "绒布系列",
+          cnName: "空气层麂皮绒",
+          enName: "",
+          cnDesc: "幅宽:150CM-160CM,成份:94%涤纶+6%氨纶,克重:120-220g",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407190243_183_12.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407190446_184_12.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260407190447_185_12.jpg",
+        },
+        {
+          id: 23,
+          category: "其他系列",
+          cnName: "D1032",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/13.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/14.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/15.jpg",
+        },
+        {
+          id: 24,
+          category: "其他系列",
+          cnName: "AEF宝格丽",
+          enName: "",
+          cnDesc: "0.75±0.05MM",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/16.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/17.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/18.jpg",
+        },
+        {
+          id: 25,
+          category: "其他系列",
+          cnName: "A22045",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/19.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/20.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/21.jpg",
+        },
+        {
+          id: 26,
+          category: "其他系列",
+          cnName: "HY3714",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/22.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/23.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/24.jpg",
+        },
+        {
+          id: 27,
+          category: "其他系列",
+          cnName: "TNNZ",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/25.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/26.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/27.jpg",
+        },
+        {
+          id: 28,
+          category: "绒布系列",
+          cnName: "水晶绒SJ",
+          enName: "",
+          cnDesc: "需要更多颜色色卡请加我们联系",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260409152218_247_12.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260409152215_244_12.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/28.jpg",
+        },
+        {
+          id: 29,
+          category: "绒布系列",
+          cnName: "天鹅绒SJ",
+          enName: "",
+          cnDesc: "180-210g",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/31.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/30.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/29.jpg",
+        },
+        {
+          id: 30,
+          category: "绒布系列",
+          cnName: "超细天鹅绒SJ",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260409195708_205_9.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/32.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/33.jpg",
+        },
+        {
+          id: 31,
+          category: "绒布系列",
+          cnName: "氨纶超柔绒布",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/37.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/36.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/35.jpg",
+        },
+        {
+          id: 32,
+          category: "其他系列",
+          cnName: "DF5260",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/38.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/39.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/40.jpg",
+        },
+        {
+          id: 33,
+          category: "其他系列",
+          cnName: "DF5182",
+          enName: "",
+          cnDesc: "",
+          enDesc: "",
+          mainImg: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/41.jpg",
+          detailImg1: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/42.jpg",
+          detailImg2: "https://yuanhaochen.oss-cn-guangzhou.aliyuncs.com/%E9%9E%8B%E5%AD%90/43.jpg",
+        }
+      ];
 
-        // DOM 元素
-        const grid = document.getElementById("productGrid");
-        const modal = document.getElementById("productModal");
-        const closeBtn = document.getElementById("closeModalBtn");
-        const modalCnName = document.getElementById("modalCnName");
-        const modalEnName = document.getElementById("modalEnName");
-        const modalCnDesc = document.getElementById("modalCnDesc");
-        const modalEnDesc = document.getElementById("modalEnDesc");
-        const detailImg1 = document.getElementById("detailImg1");
-        const detailImg2 = document.getElementById("detailImg2");
+      // ---------- 渲染产品列表 ----------
+      const productGrid = document.getElementById('productGrid');
+      const modal = document.getElementById('productModal');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const categoryBtns = document.querySelectorAll('.category-btn');
 
-        // 渲染卡片 (包含主图)
-        function renderCards() {
-          let html = "";
-          products.forEach((prod) => {
-            html += `
-                        <div class="product-card" data-id="${prod.id}">
-                            <div class="product-img">
-                                <img src="${prod.mainImg}" alt="${prod.cnName}" loading="lazy">
-                            </div>
-                            <div class="product-info">
-                                <div class="cn-name">${prod.cnName}</div>
-                                <div class="en-name">${prod.enName}</div>
-                                <div class="cn-desc">${prod.cnDesc}</div>
-                                <div class="en-desc">${prod.enDesc}</div>
-                            </div>
-                        </div>
-                    `;
+      // 渲染产品函数
+      function renderProducts(filteredProducts) {
+        productGrid.innerHTML = ''; // 清空原有内容
+        filteredProducts.forEach(product => {
+          const card = document.createElement('div');
+          card.className = 'product-card';
+          card.setAttribute('data-category', product.category);
+          card.innerHTML = `
+            <div class="product-img">
+              <img src="${product.mainImg}" alt="${product.cnName}" />
+            </div>
+            <div class="product-info">
+              <div class="cn-name">${product.cnName}</div>
+              <div class="en-name">${product.enName}</div>
+              <div class="cn-desc">${product.cnDesc}</div>
+              <div class="en-desc">${product.enDesc}</div>
+            </div>
+          `;
+          // 点击卡片打开模态框
+          card.addEventListener('click', () => {
+            document.getElementById('modalCnName').textContent = product.cnName;
+            document.getElementById('modalEnName').textContent = product.enName;
+            document.getElementById('modalCnDesc').textContent = product.cnDesc || '暂无详细描述';
+            document.getElementById('modalEnDesc').textContent = product.enDesc || 'No detailed description';
+            document.getElementById('detailImg1').src = product.detailImg1;
+            document.getElementById('detailImg1').alt = `${product.cnName}-详情1`;
+            document.getElementById('detailImg2').src = product.detailImg2;
+            document.getElementById('detailImg2').alt = `${product.cnName}-详情2`;
+            modal.style.display = 'flex';
           });
-          grid.innerHTML = html;
-        }
+          productGrid.appendChild(card);
+        });
+      }
 
-        // 根据ID查找产品对象
-        function findProductById(id) {
-          return products.find((p) => p.id === id) || null;
-        }
+      // 初始渲染全部产品
+      renderProducts(products);
 
-        // 填充模态框内容
-        function fillModal(product) {
-          if (!product) return;
-          modalCnName.textContent = product.cnName;
-          modalEnName.textContent = product.enName;
-          modalCnDesc.textContent = product.cnDesc;
-          modalEnDesc.textContent = product.enDesc;
-          detailImg1.src = product.detailImg1;
-          detailImg2.src = product.detailImg2;
-          detailImg1.alt = product.cnName + " 细节图1";
-          detailImg2.alt = product.cnName + " 细节图2";
-        }
-
-        // 打开模态框
-        function openModal(product) {
-          fillModal(product);
-          modal.style.display = "flex";
-          document.body.style.overflow = "hidden"; // 防止背景滚动
-        }
-
-        // 关闭模态框
-        function closeModal() {
-          modal.style.display = "none";
-          document.body.style.overflow = "";
-        }
-
-        // 事件监听：点击卡片打开模态框 (事件代理)
-        grid.addEventListener("click", (e) => {
-          const card = e.target.closest(".product-card");
-          if (!card) return;
-          const id = parseInt(card.getAttribute("data-id"));
-          const product = findProductById(id);
-          if (product) {
-            openModal(product);
+      // ---------- 分类筛选逻辑 ----------
+      categoryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // 移除所有按钮的active状态
+          categoryBtns.forEach(b => b.classList.remove('active'));
+          // 给当前按钮添加active
+          btn.classList.add('active');
+          // 获取筛选分类
+          const category = btn.dataset.category;
+          // 筛选产品
+          let filtered = products;
+          if (category !== 'all') {
+            filtered = products.filter(p => p.category === category);
           }
+          // 重新渲染
+          renderProducts(filtered);
         });
+      });
 
-        // 关闭按钮
-        closeBtn.addEventListener("click", closeModal);
+      // ---------- 模态框关闭逻辑 ----------
+      closeModalBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
 
-        // 点击模态背景关闭
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) {
-            closeModal();
-          }
-        });
+      // 点击模态框外部关闭
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
 
-        // 按ESC关闭
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && modal.style.display === "flex") {
-            closeModal();
-          }
-        });
-
-        // 阻止模态框内容点击事件冒泡到背景
-        const modalContent = document.querySelector(".modal-content");
-        modalContent.addEventListener("click", (e) => {
-          e.stopPropagation();
-        });
-
-        // 初始化渲染
-        renderCards();
-      })();
-    </script>
-  </body>
+      // 按ESC键关闭模态框
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+          modal.style.display = 'none';
+        }
+      });
+    })();
+  </script>
+</body>
 </html>
